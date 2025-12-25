@@ -1,12 +1,22 @@
-const { Builder, By, until} = require('selenium-webdriver');
+const { Builder, By, until, Options} = require('selenium-webdriver');
 const assert =require('assert');
 const { time } = require('console');
 
 describe('Google Search Test', function(){
     let driver;
 
+    before(async function () {
+        console.log('Di dalam before() hook')  
+        driver = await new Builder().forBrowser('chrome').build();      
+    });
+
+    after(async function () {
+        console.log('Di dalam after() hook')  
+        await driver.quit();      
+    });
+
     it('Visit Saucdemo dan cek page tittle', async function () {
-        driver = await new Builder().forBrowser('chrome').build();
+        //driver = await new Builder().forBrowser('chrome').build();
         
         this.timeout(5000);
         await driver.get('https://www.saucedemo.com');
@@ -37,7 +47,7 @@ describe('Google Search Test', function(){
         await option.click();
 
         // close browser
-        await driver.quit();
+        // await driver.quit();
     
     }).timeout(3000);
 });
