@@ -1,10 +1,10 @@
 {
   "name": "webuiautomation",
   "version": "1.0.0",
-  "description": "",
+  "description": "Selenium WebDriver tests using Mocha with Mochawesome reports",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 60000"
   },
   "dependencies": {
     "pixelmatch": "^7.1.0",
@@ -14,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "mocha": "^11.7.5",
     "mocha-simple-html-reporter": "^2.0.0",
